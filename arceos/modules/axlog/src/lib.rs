@@ -80,6 +80,7 @@ macro_rules! ax_println {
     }
 }
 
+#[macro_export]
 macro_rules! with_color {
     ($color_code:expr, $($arg:tt)*) => {{
         format_args!("\u{1B}[{}m{}\u{1B}[m", $color_code as u8, format_args!($($arg)*))
@@ -88,7 +89,7 @@ macro_rules! with_color {
 
 #[repr(u8)]
 #[allow(dead_code)]
-enum ColorCode {
+pub enum ColorCode {
     Black = 30,
     Red = 31,
     Green = 32,

@@ -3,6 +3,7 @@ use crate::sync::{Mutex, MutexGuard};
 
 #[cfg(feature = "alloc")]
 use alloc::{string::String, vec::Vec};
+use arceos_api::modules::axlog;
 
 struct StdinRaw;
 struct StdoutRaw;
@@ -166,8 +167,8 @@ pub fn __print_impl(args: core::fmt::Arguments) {
     if cfg!(feature = "smp") {
         // synchronize using the lock in axlog, to avoid interleaving
         // with kernel logs
-        arceos_api::stdio::ax_console_write_fmt(args).unwrap();
+        arceos_api::stdio::ax_console_write_fmt(axlog::with_color!(axlog::ColorCode::Red, "{}", args)).unwrap();
     } else {
-        stdout().lock().write_fmt(args).unwrap();
+        stdout().lock().write_fmt(axlog::with_color!(axlog::ColorCode::Red, "{}", args)).unwrap();
     }
 }

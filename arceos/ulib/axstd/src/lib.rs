@@ -52,10 +52,17 @@
 
 #[cfg(feature = "alloc")]
 extern crate alloc;
+#[cfg(feature = "alloc")]
+mod hashmap;
 
 #[cfg(feature = "alloc")]
 #[doc(no_inline)]
-pub use alloc::{boxed, collections, format, string, vec};
+pub use alloc::{collections as _alloc_collections, boxed, format, string, vec};
+#[cfg(feature = "alloc")]
+pub mod collections {
+    pub use crate::hashmap::HashMap;
+    pub use crate::_alloc_collections::*;
+}
 
 #[doc(no_inline)]
 pub use core::{arch, cell, cmp, hint, marker, mem, ops, ptr, slice, str};
