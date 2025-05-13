@@ -5,13 +5,13 @@ Has Hello, Arceos!
 print_with_color pass
     [92;1mCreating[0m FAT32 disk image "disk.img" ...
 mkfs.fat 4.2 (2021-01-31)
-ramfs_rename fault
+ramfs_rename pass
     [92;1mCreating[0m FAT32 disk image "disk.img" ...
 mkfs.fat 4.2 (2021-01-31)
-alt_alloc default
+alt_alloc pass
     [92;1mCreating[0m FAT32 disk image "disk.img" ...
 mkfs.fat 4.2 (2021-01-31)
-support_hashmap default
+support_hashmap pass
     [92;1mCreating[0m FAT32 disk image "disk.img" ...
 mkfs.fat 4.2 (2021-01-31)
 make[1]: Entering directory '/home/talamh/projects/rust/2025s-arceos-vipectuS/arceos/payload'
@@ -40,4 +40,4 @@ make[2]: Leaving directory '/home/talamh/projects/rust/2025s-arceos-vipectuS/arc
 make[1]: Leaving directory '/home/talamh/projects/rust/2025s-arceos-vipectuS/arceos/payload'
 File 'payload/skernel2/skernel2' doesn't exist!
 simple_hv default
-100
+400
