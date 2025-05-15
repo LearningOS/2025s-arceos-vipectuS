@@ -37,6 +37,11 @@ impl AddrSpace {
         self.va_range.size()
     }
 
+    /// Returns the address range.
+    pub fn range(&self) -> VirtAddrRange {
+        self.va_range
+    }
+
     /// Returns the reference to the inner page table.
     pub const fn page_table(&self) -> &PageTable {
         &self.pt
