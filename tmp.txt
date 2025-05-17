@@ -69,5 +69,5 @@ make[2]: Entering directory '/home/talamh/projects/rust/2025s-arceos-vipectuS/ar
 make[2]: Leaving directory '/home/talamh/projects/rust/2025s-arceos-vipectuS/arceos/payload/skernel2'
 make[1]: Leaving directory '/home/talamh/projects/rust/2025s-arceos-vipectuS/arceos/payload'
 Write file 'payload/skernel2/skernel2' into disk.img
-simple_hv default
-500
+simple_hv pass
+600
